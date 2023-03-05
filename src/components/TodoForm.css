@@ -1,0 +1,31 @@
+.form-fields{
+    display: flex;
+    flex-direction: column;
+    background-color: #495057;
+    height: 100px;
+    width: 510px;
+    justify-content: space-evenly;
+    padding: 8px;
+}
+
+form {
+    display: flex;
+    justify-content: space-between;
+}
+
+select {
+    width: 400px;
+    height: 40px;
+}
+
+button {
+    background-color: transparent;
+    border: 2px solid #343a40;
+    border-radius: 150px;
+}
+
+button:hover {
+    color: #fff;
+    background-color: #343a40;
+    transition: ease-in 0.2s;
+}

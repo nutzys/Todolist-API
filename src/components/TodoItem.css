@@ -1,0 +1,13 @@
+.item {
+    width: 515px;
+    min-height: 70px;
+    background-color: #495057;
+    margin: 4px 0px;
+    padding: 4px;
+    display: flex;
+    flex-direction: column;
+}
+
+h2 {
+    display: inline-block;
+}

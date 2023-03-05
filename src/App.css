@@ -1,0 +1,14 @@
+* {
+  font-family: 'Inter', sans-serif;
+}
+
+body{
+  background-color: #343a40;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
