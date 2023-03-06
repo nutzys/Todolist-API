@@ -28,7 +28,7 @@ function App() {
     console.log(page);
   }
 
-  const {data, isLoading} = useQuery({
+  const {data: todoQuery, isLoading} = useQuery({
     queryKey: ['todos', page, limit],
     queryFn: () => fetchTodos(page, limit),
     keepPreviousData: true,
