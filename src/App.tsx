@@ -25,7 +25,6 @@ function App() {
 
   const onClickPage = (page: number) => {
     setPage(page);
-    console.log(page);
   }
 
   const {data: todoQuery, isLoading} = useQuery({
@@ -40,6 +39,7 @@ function App() {
     queryFn: () => fetchUsers(id),
     onSuccess: data => setTodo(data)
   })
+  
   return (
     <div className="App">
       <TodoForm onSaveCount={onSaveCount} onSaveId={onSaveId}/>

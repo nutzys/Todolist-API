@@ -11,16 +11,21 @@ interface Props {
 }
 
 const TodoList: React.FC<Props> = (props) => {
+  
   const [page, setPage] = useState<number>(0);
+
   const clickPlusHandler = () => {
     setPage(page + 1);
     props.onClickPage(page);
   }
+
   const clickMinusHandler = () => {
     setPage(page - 1);
     props.onClickPage(page);
   }
+
   if(props.isLoading) return (<h1>Loading...</h1>)
+
   return (
     <div>
       {props.todo?.map((item: Todo) => (
