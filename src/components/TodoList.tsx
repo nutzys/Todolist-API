@@ -15,12 +15,12 @@ const TodoList: React.FC<Props> = (props) => {
   const [page, setPage] = useState<number>(0);
 
   const clickPlusHandler = () => {
-    setPage(page + 1);
+    setPage(old => old + 1);
     props.onClickPage(page);
   }
 
   const clickMinusHandler = () => {
-    setPage(page - 1);
+    setPage(old => old - 1);
     props.onClickPage(page);
   }
 
