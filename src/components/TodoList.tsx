@@ -7,7 +7,6 @@ import TodoItem from './TodoItem'
 import './TodoList.css';
 
 interface Props {
-  todo: Todo[],
   limit: number,
   id: number,
 }
