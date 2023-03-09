@@ -5,7 +5,6 @@ import fetchUsers from './api/fetchUsers';
 import './App.css';
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
-import UserList from './components/UserList';
 import { Todo } from './model/todo';
 
 function App() {
