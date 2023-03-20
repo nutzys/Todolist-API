@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { GetAllTodos } from '../api/fetchAllTodos';
 import { GetTodos } from '../api/fetchTodos';
 import TodoItem from './TodoItem'
@@ -12,7 +12,6 @@ const TodoList: React.FC<Props> = (props) => {
   
   const [page, setPage] = useState<number>(1);
   const [totalLimit, setTotalLimit] = useState<number>(0);
-
   const {data: allTodos} = GetAllTodos();
   const {data, isLoading} = GetTodos({
     page: page, 
@@ -21,13 +20,12 @@ const TodoList: React.FC<Props> = (props) => {
 
   const clickPlusHandler = () => {
     setPage(old => old + 1);
-    setTotalLimit(old => old + props.limit); //PROBLEM HERE
-    console.log(totalLimit);
+    let limitString = props.limit.toString();
+    setTotalLimit(old => old + parseInt(limitString));
   }
   
   const clickMinusHandler = () => {
     setPage(old => old - 1);
-    setTotalLimit(old => old - props.limit);
   }
 
   if(isLoading) return <h1>Loading...</h1>
