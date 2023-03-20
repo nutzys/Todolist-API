@@ -2,24 +2,27 @@ import React, {useState} from 'react';
 import './App.css';
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
-import { Todo } from './model/todo';
+import UserList from './components/UserList';
 
 function App() {
 
-  const [id, setId] = useState<number>(0);
+  const [id, setId] = useState<number>(1);
   const [limit, setLimit] = useState<number>(200);
+  const [isUser, setIsUser] = useState<boolean>(false);
 
   const onSaveCount = (limits: number) => {
     setLimit(limits);
+    setIsUser(false);
   }
   const onSaveId = (uid: number) => {
     setId(uid);
+    setIsUser(true);
   }
   
   return (
     <div className="App">
       <TodoForm onSaveCount={onSaveCount} onSaveId={onSaveId}/>
-      <TodoList limit={limit} id={id}/>
+      {!isUser ? (<TodoList limit={limit}/>) : (<UserList userId={id}/>)}
     </div>
   );
 }

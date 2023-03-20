@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import './TodoForm.css';
 
 const TodoForm: React.FC<{onSaveCount: any, onSaveId: any}> = (props) => {
@@ -24,7 +24,7 @@ const TodoForm: React.FC<{onSaveCount: any, onSaveId: any}> = (props) => {
                 <option value="25">25</option>
                 <option value="50">50</option>
             </select>
-            <button>GET COUNT</button>
+            <button disabled={!count}>GET COUNT</button>
         </form>
         <form onSubmit={idFormHandler}>
             <select name="userid" onChange={(e) => setId(e.target.value)}>
@@ -40,7 +40,7 @@ const TodoForm: React.FC<{onSaveCount: any, onSaveId: any}> = (props) => {
                 <option value="9">9</option>
                 <option value="10">10</option>
             </select>
-            <button>GET USERID</button>
+            <button disabled={!id}>GET USERID</button>
         </form>
     </div>
   )
