@@ -26,6 +26,7 @@ const TodoForm: React.FC<{onSaveCount: any, onSaveId: any}> = (props) => {
             </select>
             <button disabled={!count}>GET COUNT</button>
         </form>
+        {!count && (<span className="errors">Select count!</span>)}
         <form onSubmit={idFormHandler}>
             <select name="userid" onChange={(e) => setId(e.target.value)}>
                 <option selected disabled>Select ID</option>
@@ -42,6 +43,7 @@ const TodoForm: React.FC<{onSaveCount: any, onSaveId: any}> = (props) => {
             </select>
             <button disabled={!id}>GET USERID</button>
         </form>
+        {!id && (<span className="errors">Select id!</span>)}
     </div>
   )
 }
